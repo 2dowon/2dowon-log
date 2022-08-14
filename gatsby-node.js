@@ -43,8 +43,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Create post detail pages
   posts.forEach(({ node }, index) => {
-    const previousPostId = index === 0 ? null : posts[index - 1].id
-    const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+    const previousPostId = index === 0 ? null : posts[index - 1].node.id
+    const nextPostId =
+      index === posts.length - 1 ? null : posts[index + 1].node.id
 
     createPage({
       path: node.fields.slug,

@@ -39,43 +39,45 @@ const PostList = ({ postList }) => {
         const { slug } = post.fields
 
         return (
-          <li key={slug}>
-            <article
-              className="post-list-item"
-              itemScope
-              itemType="http://schema.org/Article"
-            >
-              <Link to={slug} itemProp="url">
-                <header>
-                  <h2>
-                    <span itemProp="headline">{title}</span>
-                  </h2>
-                  <small>{date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: description,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </Link>
+          <article
+            key={slug}
+            className="post-list-item border-b-[1px] border-gray-4 py-[2rem] group"
+            itemScope
+            itemType="http://schema.org/Article"
+          >
+            <Link to={slug} itemProp="url">
+              <header>
+                <h2>
+                  <span className="font-bold text-heading-5 text-gray-10 group-hover:text-green">
+                    {title}
+                  </span>
+                </h2>
+                <small className="flex justify-end text-gray-7">{date}</small>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: description,
+                  }}
+                  itemProp="description"
+                  className="text-gray-9"
+                />
+              </section>
+            </Link>
 
-              <div className="flex gap-[1rem]">
-                {tags &&
-                  tags.map(tag => {
-                    return (
-                      <Link key={tag} to={`/tags?query=${tag}`}>
-                        <div className="bg-gray-500 text-white text-center px-[1rem] rounded-full cursor-pointer">
-                          {tag}
-                        </div>
-                      </Link>
-                    )
-                  })}
-              </div>
-            </article>
-          </li>
+            <div className="flex gap-[0.5rem] mt-[1rem]">
+              {tags &&
+                tags.map(tag => {
+                  return (
+                    <Link key={tag} to={`/tags?query=${tag}`}>
+                      <div className="bg-gray-7 text-white flex justify-center items-center px-[0.8rem] rounded-full cursor-pointer">
+                        {tag}
+                      </div>
+                    </Link>
+                  )
+                })}
+            </div>
+          </article>
         )
       })}
     </div>

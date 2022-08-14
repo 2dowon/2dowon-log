@@ -5,13 +5,14 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+import PostList from "../components/PostList"
+
+const BlogIndex = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
+      <Layout>
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -23,53 +24,9 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout>
       <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-          const tags = post.frontmatter.tags
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-                <div className="flex gap-[1rem]">
-                  {tags &&
-                    tags.map(tag => {
-                      return (
-                        <Link key={tag} to={`/tags?query=${tag}`}>
-                          <div className="bg-gray-500 text-white text-center px-[1rem] rounded-full cursor-pointer">
-                            {tag}
-                          </div>
-                        </Link>
-                      )
-                    })}
-                </div>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+      <PostList postList={posts} />
     </Layout>
   )
 }
@@ -85,11 +42,6 @@ export const Head = () => <Seo title="All posts" />
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt

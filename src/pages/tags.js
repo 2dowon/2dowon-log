@@ -7,7 +7,7 @@ import queryString from "query-string"
 
 // Components
 // import { Helmet } from "react-helmet"
-import { Link, graphql, navigate } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import TagList from "../components/TagList"
 import PostList from "../components/PostList"
 import Layout from "../components/layout"
@@ -15,11 +15,7 @@ import Layout from "../components/layout"
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group: tags, nodes: posts },
-    site: {
-      siteMetadata: { title },
-    },
   },
-  location,
 }) => {
   const [selected, setSelected] = useState()
   const [filteredPosts, setFilteredPosts] = useState([])
@@ -46,19 +42,19 @@ const TagsPage = ({
   }, [query])
 
   return (
-    <Layout location={location} title={title}>
+    <Layout>
       {/* <Helmet title={title} /> */}
 
       <div>
         {selected ? (
-          <h1>
+          <h4>
             There are {filteredPosts.length} post
             {filteredPosts.length > 1 && "s"} that match #{selected}.
-          </h1>
+          </h4>
         ) : (
-          <h1>
+          <h4>
             There are {tags.length} tag{tags.length > 1 && "s"}.
-          </h1>
+          </h4>
         )}
 
         <TagList
@@ -102,11 +98,6 @@ export default TagsPage
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(limit: 2000) {
       group(field: frontmatter___tags) {
         fieldValue

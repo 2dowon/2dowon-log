@@ -21,7 +21,7 @@ const TagList = ({ tagList, count, selected }) => {
   }
 
   return (
-    <div>
+    <div className="flex gap-[1rem] flex-wrap">
       {tagList.map((tag, i) => {
         const isSelectedTag = selected === tag.fieldValue
         return (
@@ -30,8 +30,11 @@ const TagList = ({ tagList, count, selected }) => {
             to={isSelectedTag ? "/tags" : `/tags?query=${tag.fieldValue}`}
           >
             <div
-              selected={isSelectedTag}
-              className={`${isSelectedTag && "text-red-500"}`}
+              className={`${
+                isSelectedTag
+                  ? "bg-green text-[#FCF6F5]"
+                  : "bg-gray-9 text-white"
+              } text-center px-[0.8rem] py-[0.2rem] rounded-full cursor-pointer hover:bg-green hover:text-[#FCF6F5]`}
             >
               {spaceToDash(tag.fieldValue)} ({tag.totalCount})
             </div>

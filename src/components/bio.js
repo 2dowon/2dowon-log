@@ -45,17 +45,17 @@ const Bio = () => {
       />
       {author?.name && (
         <div className="space-y-[.2rem]">
-          <div className="font-bold text-lg">@{author.name}</div>
-          <div className="text-gray-500">{author?.summary || null}</div>
-          <div className="flex gap-[1rem]">
+          <div className="font-bold text-body-4">@{author.name}</div>
+          <div className="text-gray-8">{author?.summary || null}</div>
+          <div className="flex gap-[1rem] mt-[1rem]">
             <a
-              className="hover:text-blue-500"
+              className="hover:text-green text-gray-10"
               href={`https://github.com/${social?.github || ``}`}
             >
               GitHub
             </a>
             <a
-              className="hover:text-blue-500"
+              className="hover:text-green text-gray-10"
               href={`https://${social?.tistory || ``}.tistory.com`}
             >
               Tistory

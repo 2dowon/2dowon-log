@@ -6,26 +6,27 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogPostTemplate = ({
-  data: { previous, next, site, markdownRemark: post },
-  location,
+  data: { previous, next, markdownRemark: post },
 }) => {
-  const siteTitle = site.siteMetadata?.title || `Title`
-
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout>
       <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
+        <header className="w-full border-b-[1px] border-gray-4 mb-[2rem]">
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-          <div className="flex gap-[1rem]">
+          <div className="w-full text-sm italic text-right text-gray-8">
+            {post.frontmatter.date}
+          </div>
+          <div className="flex gap-[0.5rem] mt-[1rem] mb-[2rem]">
             {post.frontmatter.tags.map(tag => {
               return (
-                <Link key={tag} to={`/tags/${tag}`}>
-                  <div>{tag}</div>
+                <Link key={tag} to={`/tags?query=${tag}`}>
+                  <div className="bg-gray-7 text-white text-center px-[0.8rem] rounded-full cursor-pointer">
+                    {tag}
+                  </div>
                 </Link>
               )
             })}
@@ -34,6 +35,7 @@ const BlogPostTemplate = ({
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
+          className="pb-[3rem]"
         />
         <hr />
         <footer>
@@ -50,17 +52,29 @@ const BlogPostTemplate = ({
             padding: 0,
           }}
         >
-          <li>
+          <li
+            className={`list-none bg-gray-3 px-[1rem] h-[5rem] flex justify-center items-center rounded-md ${
+              !previous && "invisible"
+            }`}
+          >
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+                <span className="font-medium text-gray-10 text-detail-6">
+                  ← {previous.frontmatter.title}
+                </span>
               </Link>
             )}
           </li>
-          <li>
+          <li
+            className={`list-none bg-gray-3 px-[1rem] h-[5rem] flex justify-center items-center rounded-md ${
+              !next && "invisible"
+            }`}
+          >
             {next && (
               <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+                <span className="font-medium text-gray-10 text-detail-6">
+                  {next.frontmatter.title} →
+                </span>
               </Link>
             )}
           </li>
@@ -87,11 +101,6 @@ export const pageQuery = graphql`
     $previousPostId: String
     $nextPostId: String
   ) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
