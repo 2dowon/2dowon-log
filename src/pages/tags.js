@@ -46,14 +46,14 @@ const TagsPage = ({
 
       <div>
         {selected ? (
-          <h4>
+          <div className="text-body-4 pc:text-heading-6 mb-[1rem] font-bold">
             There are {filteredPosts.length} post
             {filteredPosts.length > 1 && "s"} that match #{selected}.
-          </h4>
+          </div>
         ) : (
-          <h4>
+          <div className="text-body-4 pc:text-heading-6 mb-[1rem] font-bold">
             There are {tags.length} tag{tags.length > 1 && "s"}.
-          </h4>
+          </div>
         )}
 
         <TagList

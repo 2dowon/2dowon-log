@@ -34,6 +34,10 @@ module.exports = {
         "detail-1": ["1.1rem", { lineHeight: "150%" }],
         "detail-2": ["1.2rem", { lineHeight: "150%" }],
       },
+      screens: {
+        pc: "800px",
+        mobile: { min: "1px", max: "799px" },
+      },
     },
   },
   plugins: [],

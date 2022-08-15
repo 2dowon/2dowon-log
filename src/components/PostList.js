@@ -47,11 +47,9 @@ const PostList = ({ postList }) => {
           >
             <Link to={slug} itemProp="url">
               <header>
-                <h2>
-                  <span className="font-bold text-heading-5 text-gray-10 group-hover:text-green">
-                    {title}
-                  </span>
-                </h2>
+                <div className="font-bold text-body-2 pc:text-heading-5 text-gray-10 group-hover:text-green mb-[1rem]">
+                  {title}
+                </div>
                 <small className="flex justify-end text-gray-7">{date}</small>
               </header>
               <section>
