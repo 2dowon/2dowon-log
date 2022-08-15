@@ -16,8 +16,17 @@ module.exports = {
     },
   },
   plugins: [
+    "gatsby-plugin-sitemap",
     "gatsby-plugin-postcss",
     `gatsby-plugin-image`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://2dowon-log.netlify.app",
+        sitemap: "https://2dowon-log.netlify.app/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
