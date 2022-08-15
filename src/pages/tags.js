@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import _ from "lodash"
 import PropTypes from "prop-types"
 import filter from "lodash/filter"
 
