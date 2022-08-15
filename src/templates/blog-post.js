@@ -5,10 +5,12 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Tag from "../components/Tag"
+import { Utterances } from "../components/Utterances"
 
 const BlogPostTemplate = ({
-  data: { previous, next, markdownRemark: post },
+  data: { previous, next, markdownRemark: post, site },
 }) => {
+  const utterances = site.siteMetadata.comment.utterances
   return (
     <Layout>
       <article
@@ -75,6 +77,7 @@ const BlogPostTemplate = ({
           </li>
         </ul>
       </nav>
+      {!!utterances && <Utterances repo={utterances} theme="github-light" />}
     </Layout>
   )
 }
@@ -96,6 +99,13 @@ export const pageQuery = graphql`
     $previousPostId: String
     $nextPostId: String
   ) {
+    site {
+      siteMetadata {
+        comment {
+          utterances
+        }
+      }
+    }
     markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)

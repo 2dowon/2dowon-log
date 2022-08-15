@@ -6,10 +6,13 @@ module.exports = {
       summary: `Junior Frontend Engineer`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://2dowon-log.netlify.app`,
     social: {
       github: `2dowon`,
       tistory: "dwon-lee",
+    },
+    comment: {
+      utterances: "2dowon/2dowon-log",
     },
   },
   plugins: [
