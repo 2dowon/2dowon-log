@@ -2,7 +2,7 @@
 title: React + Next.js - Vercel로 배포하기
 date: "2021-11-16 12:11:53"
 description: "Next.js 프레임워크를 이용해 React 프로젝트를 만들었다면 Vercel로 배포할 수 있다. 참고로 CRA를 이용해서 React 프로젝트를 진행할 때는 GitHub Pages나 Netlify를 이용해서 배포했었다. (GitHub Pages 배포 방법은 이전에도 정리해놓은 글이 있어서..."
-tags: ["vercel", "next.js"]
+tags: ["vercel", "next.js", "deploy"]
 ---
 
 Next.js 프레임워크를 이용해 React 프로젝트를 만들었다면 Vercel로 배포할 수 있다. 참고로 CRA를 이용해서 React 프로젝트를 진행할 때는 GitHub Pages나 Netlify를 이용해서 배포했었다. (GitHub Pages 배포 방법은 이전에도 정리해놓은 글이 있어서 혹시라도 궁금하다면 [이 글](https://2dowon.netlify.app/etc/publishing-on-github-pages/)을 참고해주세요!)
@@ -19,25 +19,25 @@ Next.js 프레임워크를 이용해 React 프로젝트를 만들었다면 Verce
 
 ### 1. Vercel 로그인
 
-![vercel1](./vercel1.png)
+![vercel1](./images/vercel1.png)
 
 [Vercel](https://vercel.com/) 사이트에서 로그인을 한다. GitHub, GitLab, Bitbucket 등을 이용해 로그인할 수 있는데, 본인이 배포하고자 하는 프로젝트의 소스코드가 있는 곳으로 로그인을 하면 된다. 나는 GitHub을 통해 소스코드를 관리하고 있기 때문에 GitHub으로 로그인을 했다.
 
 ### 2. New Project 생성
 
-![vercel2](./vercel2.png)
+![vercel2](./images/vercel2.png)
 
 로그인을 했다면 대시보드로 넘어오게 되는데, 거기서 New Project를 생성할 수 있다.
 
 ### 3. Import Git Repository
 
-![vercel3](./vercel3.png)
+![vercel3](./images/vercel3.png)
 
 배포하고자하는 프로젝트의 repo를 선택해서 import 한다.
 
 ### 4. Deploy
 
-![vercel4](./vercel4.png)
+![vercel4](./images/vercel4.png)
 
 프로젝트를 import 했다면 이제 배포할 수 있다.
 
@@ -50,23 +50,23 @@ Next.js 프레임워크를 이용해 React 프로젝트를 만들었다면 Verce
 
 ### 5. 배포가 잘 되었는지 확인 + 배포 주소
 
-![vercel5](./vercel5.png)
+![vercel5](./images/vercel5.png)
 
 배포가 잘되었다면 대시보드에서 배포한 프로젝트를 클릭했을 때 위처럼 보일 것이다. Domains에서 배포된 주소를 확인할 수 있다. 도메인은 아래 사진처럼 총 3개정도 생성되는 것 같다.
 
-![vercel6](./vercel6.png)
+![vercel6](./images/vercel6.png)
 
 ### ✅ 환경 변수 설정하기
 
 만약 배포할 때 환경 변수를 설정하는 것을 까먹었다면 프로젝트의 Settings에서 설정할 수 있다.
 
-![vercel7](./vercel7.png)
+![vercel7](./images/vercel7.png)
 
 Project Settings - Environment Variables 탭에 들어오면 Add New를 통해서 환경변수를 추가할 수 있다. 환경변수를 추가하면 이미지 맨 아래에 있는 것처럼 확인할 수 있다. 저기서 NEXT_PUBLIC_AIRTABLE_KEY가 내가 추가해준 환경변수이다.
 
 환경변수를 추가한 후 다시 재배포를 하면 환경변수가 적용되어 배포된 것을 확인할 수 있다.
 
-![vercel8](./vercel8.png)
+![vercel8](./images/vercel8.png)
 
 재배포는 Deployments 탭에서 할 수 있다. 만약 환경변수를 제대로 설정하지 않았다면 저기 맨 마지막 배포처럼 Error로 되어있을 것이다. Error가 난 배포를 Redeploy로 재배포해주면 된다.
 
