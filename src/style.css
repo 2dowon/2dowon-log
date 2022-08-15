@@ -199,12 +199,13 @@ li > ul {
 
 blockquote {
   color: var(--color-text);
-  margin-right: var(--spacing-8);
-  padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
-  border-left: var(--spacing-1) solid #2bae66;
-  font-size: var(--fontSize-1);
+  background: #f1f3f5;
+  padding: var(--spacing-3) var(--spacing-6);
+  border-left: var(--spacing-1) solid #ced4da;
   margin-bottom: var(--spacing-8);
   line-height: var(--lineHeight-normal);
+  font-size: var(--fontSize-1);
+  font-weight: var(--fontWeight-medium);
 }
 
 blockquote > :last-child {
@@ -287,7 +288,6 @@ a:focus {
 }
 
 .bio {
-  display: flex;
   margin-bottom: var(--spacing-16);
 }
 
@@ -298,8 +298,6 @@ a:focus {
 .bio-avatar {
   margin-right: var(--spacing-4);
   margin-bottom: var(--spacing-0);
-  min-width: 50px;
-  border-radius: 100%;
 }
 
 .blog-post header h1 {
