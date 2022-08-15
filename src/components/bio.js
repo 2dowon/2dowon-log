@@ -44,10 +44,14 @@ const Bio = () => {
         alt="Profile picture"
       />
       {author?.name && (
-        <div className="space-y-[.2rem]">
-          <div className="font-bold text-body-5">@{author.name}</div>
-          <div className="text-gray-8">{author?.summary || null}</div>
-          <div className="flex gap-[1rem] mt-[1rem]">
+        <div>
+          <div className="font-bold text-detail-1 name bg-green py-[0.3rem] rounded-md text-ivory text-center w-[6rem]">
+            @{author.name}
+          </div>
+          <div className="text-gray-8 mb-[0.5rem] mt-[0.2rem]">
+            {author?.summary || null}
+          </div>
+          <div className="flex gap-[1rem]">
             <a
               className="hover:text-green text-gray-10"
               href={`https://github.com/${social?.github || ``}`}
