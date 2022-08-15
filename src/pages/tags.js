@@ -97,7 +97,10 @@ export default TagsPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(limit: 2000) {
+    allMarkdownRemark(
+      limit: 2000
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
