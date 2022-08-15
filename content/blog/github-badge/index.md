@@ -23,25 +23,26 @@ GitHub의 README 파일은 Repository 즉, 내 프로젝트를 확인할 때 가
 <img alt="Python" src ="https://img.shields.io/badge/기술명-원하는색상코드.svg?&style=for-the-badge&logo=로고명&logoColor=로고색상"/>
 ```
 
-> #### python badge 만들기
->
-> ![github-badge2](./github-badge2.png)
->
-> - 기술명 : Python
-> - 원하는 색상 코드 : 3776AB
-> - 아이콘 : Python
-> - 로고색상 : White
->
-> ```markdown
-> <img alt="Python" src ="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=white"/>
-> ```
+> python badge 만들기
+
+![github-badge2](./github-badge2.png)
+
+- 기술명 : Python
+- 원하는 색상 코드 : 3776AB
+- 아이콘 : Python
+- 로고색상 : White
+
+```markdown
+<img alt="Python" src ="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=white"/>
+```
 
 ### 아이콘과 색상코드
 
 기술의 로고명과 색상코드는 [simpleicons](https://simpleicons.org/) 사이트에서 확인할 수 있다. 이 사이트에서 제공되는 로고 아이콘은 shield.io에서 다 사용 가능하다고 한다.
 
 > python을 검색하면 로고명은 Python이고, 해당 색상은 3776AB 라는 것을 알 수 있다.
-> ![github-badge3](./github-badge3.png)
+
+![github-badge3](./github-badge3.png)
 
 </br>
 

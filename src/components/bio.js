@@ -32,20 +32,20 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
+    <div className="flex items-center bio">
       <StaticImage
-        className="bio-avatar"
+        className="bio-avatar rounded-[100%] min-w-[5rem]"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
         src="../images/profile-pic.jpeg"
-        width={80}
-        height={80}
+        width={100}
+        height={100}
         quality={95}
         alt="Profile picture"
       />
       {author?.name && (
         <div className="space-y-[.2rem]">
-          <div className="font-bold text-body-4">@{author.name}</div>
+          <div className="font-bold text-body-5">@{author.name}</div>
           <div className="text-gray-8">{author?.summary || null}</div>
           <div className="flex gap-[1rem] mt-[1rem]">
             <a

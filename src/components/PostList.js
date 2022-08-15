@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import _ from "lodash"
-
 import { Link } from "gatsby"
+import Tag from "./Tag"
 
 const checkIsScrollAtBottom = () => {
   return (
@@ -68,13 +68,7 @@ const PostList = ({ postList }) => {
             <div className="flex gap-[0.5rem] mt-[1rem]">
               {tags &&
                 tags.map(tag => {
-                  return (
-                    <Link key={tag} to={`/tags?query=${tag}`}>
-                      <div className="bg-gray-7 text-white flex justify-center items-center px-[0.8rem] rounded-full cursor-pointer">
-                        {tag}
-                      </div>
-                    </Link>
-                  )
+                  return <Tag tag={tag} />
                 })}
             </div>
           </article>

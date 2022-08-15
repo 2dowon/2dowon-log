@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Tag from "../components/Tag"
 
 const BlogPostTemplate = ({
   data: { previous, next, markdownRemark: post },
@@ -22,13 +23,7 @@ const BlogPostTemplate = ({
           </div>
           <div className="flex gap-[0.5rem] mt-[1rem] mb-[2rem]">
             {post.frontmatter.tags.map(tag => {
-              return (
-                <Link key={tag} to={`/tags?query=${tag}`}>
-                  <div className="bg-gray-7 text-white text-center px-[0.8rem] rounded-full cursor-pointer">
-                    {tag}
-                  </div>
-                </Link>
-              )
+              return <Tag tag={tag} />
             })}
           </div>
         </header>
