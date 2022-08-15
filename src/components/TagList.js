@@ -21,7 +21,7 @@ const TagList = ({ tagList, count, selected }) => {
   }
 
   return (
-    <div className="flex gap-[1rem] flex-wrap">
+    <div className="flex gap-[0.8rem] flex-wrap">
       {tagList.map((tag, i) => {
         const isSelectedTag = selected === tag.fieldValue
         return (
