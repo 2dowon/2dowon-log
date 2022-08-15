@@ -20,6 +20,13 @@ module.exports = {
     "gatsby-plugin-postcss",
     `gatsby-plugin-image`,
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`DM+Serif+Display:ital@0;1`],
+        display: "swap",
+      },
+    },
+    {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://2dowon-log.netlify.app",
