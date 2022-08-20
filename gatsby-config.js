@@ -5,7 +5,7 @@ module.exports = {
       name: `2dowon`,
       summary: `Junior Frontend Engineer`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `2dowon's log`,
     siteUrl: `https://2dowon-log.netlify.app`,
     social: {
       github: `2dowon`,
@@ -136,7 +136,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/2dowon-log.png`, // This path is relative to the root of the site.
       },
     },
   ],
