@@ -32,9 +32,9 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="flex items-center bio">
+    <div className="flex items-center mb-[4rem] bio">
       <StaticImage
-        className="bio-avatar rounded-[100%] min-w-[5rem]"
+        className="rounded-[100%] min-w-[5rem] mr-[1rem]"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
         src="../images/profile-pic.jpeg"
@@ -45,7 +45,7 @@ const Bio = () => {
       />
       {author?.name && (
         <div>
-          <div className="font-bold text-detail-1 name bg-green py-[0.3rem] rounded-md text-ivory text-center w-[6rem]">
+          <div className="font-bold text-detail-1 bg-green py-[0.3rem] rounded-md text-ivory text-center w-[6rem] font-serif">
             @{author.name}
           </div>
           <div className="text-gray-8 mb-[0.5rem] mt-[0.2rem]">
@@ -53,13 +53,13 @@ const Bio = () => {
           </div>
           <div className="flex gap-[1rem]">
             <a
-              className="hover:text-green text-gray-10"
+              className="pc:hover:text-green text-gray-10"
               href={`https://github.com/${social?.github || ``}`}
             >
               GitHub
             </a>
             <a
-              className="hover:text-green text-gray-10"
+              className="pc:hover:text-green text-gray-10"
               href={`https://${social?.tistory || ``}.tistory.com`}
             >
               Tistory

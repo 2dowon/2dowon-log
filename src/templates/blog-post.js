@@ -39,7 +39,7 @@ const BlogPostTemplate = ({
           <Bio />
         </footer>
       </article>
-      <nav className="blog-post-nav">
+      <nav className="blog-post-nav mb-[5rem]">
         <ul
           style={{
             display: `flex`,
@@ -50,26 +50,26 @@ const BlogPostTemplate = ({
           }}
         >
           <li
-            className={`list-none bg-gray-3 px-[1rem] h-[5rem] flex justify-center items-center rounded-md ${
+            className={`list-none bg-gray-3 px-[1rem] py-[0.5rem] flex justify-center items-center rounded-md max-w-[45%] ${
               !previous && "invisible"
             }`}
           >
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                <span className="font-medium text-gray-10 text-detail-6">
+                <span className="font-medium text-gray-10 text-detail-4">
                   ← {previous.frontmatter.title}
                 </span>
               </Link>
             )}
           </li>
           <li
-            className={`list-none bg-gray-3 px-[1rem] h-[5rem] flex justify-center items-center rounded-md ${
+            className={`list-none bg-gray-3 px-[1rem] py-[0.5rem] flex justify-center items-center rounded-md max-w-[45%] ${
               !next && "invisible"
             }`}
           >
             {next && (
               <Link to={next.fields.slug} rel="next">
-                <span className="font-medium text-gray-10 text-detail-6">
+                <span className="font-medium text-gray-10 text-detail-4">
                   {next.frontmatter.title} →
                 </span>
               </Link>

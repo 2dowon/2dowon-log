@@ -34,7 +34,7 @@ const TagList = ({ tagList, count, selected }) => {
                 isSelectedTag
                   ? "bg-green text-[#FCF6F5]"
                   : "bg-gray-9 text-white"
-              } text-center px-[0.8rem] py-[0.2rem] rounded-full cursor-pointer hover:bg-green hover:text-[#FCF6F5]`}
+              } text-center px-[0.8rem] py-[0.2rem] rounded-full cursor-pointer pc:hover:bg-green pc:hover:text-[#FCF6F5]`}
             >
               {spaceToDash(tag.fieldValue)} ({tag.totalCount})
             </div>

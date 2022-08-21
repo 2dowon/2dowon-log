@@ -31,8 +31,13 @@ module.exports = {
         "body-2": ["1.5rem", { lineHeight: "150%" }],
         "body-3": ["1.4rem", { lineHeight: "150%" }],
         "body-4": ["1.3rem", { lineHeight: "150%" }],
-        "detail-1": ["1.1rem", { lineHeight: "150%" }],
-        "detail-2": ["1.2rem", { lineHeight: "150%" }],
+        "detail-1": ["1.2rem", { lineHeight: "150%" }],
+        "detail-2": ["1.1rem", { lineHeight: "150%" }],
+        "detail-3": ["1rem", { lineHeight: "150%" }],
+        "detail-4": ["0.9rem", { lineHeight: "150%" }],
+      },
+      fontFamily: {
+        serif: ["DM Serif Display", "sans-serif"],
       },
       screens: {
         pc: "800px",
